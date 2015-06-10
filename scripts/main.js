@@ -4,9 +4,13 @@
 
 w3c_slidy.mouse_click_enabled = false;
 
-var landmarks, result, display;
+var landmarks, districts, result, display;
 $.getJSON('data/historic_landmarks.geojson', function (data) {
   landmarks = data;
+});
+
+$.getJSON('data/austin_districts.geojson', function (data) {
+  districts = data;
 });
 
 var setupMap = function(el) {
