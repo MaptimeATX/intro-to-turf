@@ -264,7 +264,7 @@ Check out the issues: [github.com/turfjs/turf/issues](https://github.com/turfjs/
 
 # Hands-On!
 
-[https://goo.gl/jVHCR2](https://goo.gl/jVHCR2)
+[jsfiddle.net/jseppi/grwh8kmx/4/](https://jsfiddle.net/jseppi/grwh8kmx/4/)
 
 . . .
 
@@ -289,3 +289,19 @@ Work together. Ask questions. You can do it!
 
 * GeoJSON: [maptimeatx.github.io/intro-to-turf/data/austin_districts.geojson](https://maptimeatx.github.io/intro-to-turf/data/austin_districts.geojson)
 * Modified from: [data.austintexas.gov/Government/Single-Member-Council-Districts/69pm-tzkv](https://data.austintexas.gov/Government/Single-Member-Council-Districts/69pm-tzkv)
+
+-----------
+
+-----------
+
+# Answers
+
+Don't Peak!
+
+. . .
+
+* Center: [https://jsfiddle.net/jseppi/5pgzdtpz/1/](https://jsfiddle.net/jseppi/5pgzdtpz/1/)
+* Merge: [https://jsfiddle.net/6eo46j64/3/](https://jsfiddle.net/6eo46j64/3/)
+* Number in each: [https://jsfiddle.net/jseppi/bxw7o6hb/4/](https://jsfiddle.net/jseppi/bxw7o6hb/4/)
+* Centroids: [https://jsfiddle.net/jseppi/f9vov2s3/1/](https://jsfiddle.net/jseppi/f9vov2s3/1/)
+* Landmarks in District 9: [https://jsfiddle.net/at6mukbc/2/](https://jsfiddle.net/at6mukbc/2/)
