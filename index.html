@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="James Seppi" />
+  <meta name="author" content="James Seppi | @hydrologee" />
   <title>Intro to Turf.js</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
@@ -42,74 +42,51 @@ code > span.er { color: #c3bf9f; }
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Maptime Intro to Turf.js</h1>
+  <h1 class="title">Intro to Turf.js</h1>
   <p class="author">
-James Seppi
+James Seppi | <span class="citation">@hydrologee</span>
   </p>
-  <p class="date">TNRIS GeoRodeo - May 22, 2015</p>
+  <p class="date">MaptimeATX - June 10, 2015</p>
 </div>
 <div id="intro-to-turf.js" class="slide section level1">
 <h1>Intro to Turf.js</h1>
-<p>Presentation by James Seppi</p>
-<p>Software Developer at <a href="http://tnris.org">TNRIS</a>, part of <a href="http://www.twdb.texas.gov">TWDB</a></p>
-<p>Twitter: <a href="http://twitter.com/hydrologee">hydrologee</a></p>
-<p>Viewable at <a href="http://jseppi.github.io/intro-to-turf/">jseppi.github.io/intro-to-turf/</a></p>
-<p>Source code at <a href="https://github.com/jseppi/intro-to-turf/">github.com/jseppi/intro-to-turf/</a></p>
-</div>
-<div id="what-is-turf.js" class="slide section level1">
-<h1>What is Turf.js?</h1>
-<p>JavaScript library for geospatial analysis</p>
-<div class="incremental">
-<p>Runs in the browser, or in <a href="http://nodejs.org">Node.js</a></p>
-</div>
-<div class="incremental">
-<p>Open Source, MIT-licensed</p>
-<p>Collection of small modules</p>
-</div>
-<div class="incremental">
-<p><a href="http://turfjs.org">turfjs.org</a></p>
-<p><a href="https://github.com/turfjs">github.com/turfjs</a></p>
-<div class="figure">
-<img src="img/turflogo.png" />
-
-</div>
-</div>
-</div>
-<div id="some-history" class="slide section level1">
-<h1>Some History</h1>
-<p>(from Tom MacWright - <a href="http://www.macwright.org/presentations/turf-geodc">macwright.org/presentations/turf-geodc</a>)</p>
-<div class="incremental">
-<p>2000: <a href="http://tsusiatsoftware.net/jts/main.html">Java Topology Suite (JTS)</a></p>
-</div>
-<div class="incremental">
-<p>2003: <a href="http://trac.osgeo.org/geos/">GEOS</a>, JTS port to C++</p>
-</div>
-<div class="incremental">
-<p>2008: <a href="http://toblerity.org/shapely/manual.html">Shapely</a>, interface of GEOS to Python</p>
-</div>
-<div class="incremental">
-<p>2011: <a href="https://github.com/bjornharrtell/jsts">JavaScript Topology Suite (JSTS)</a>, JTS port to JS</p>
-</div>
-<div class="incremental">
-<p>2014: <a href="http://turfjs.org">Turf</a></p>
-</div>
+<p>Presentation at <a href="http://www.meetup.com/MaptimeATX/events/222643093/">MaptimeATX</a></p>
+<p>Viewable at <a href="http://maptimeatx.github.io/intro-to-turf">maptimeatx.github.io/intro-to-turf</a></p>
+<p>Source code at <a href="https://github.com/MaptimeATX/intro-to-turf/">github.com/MaptimeATX/intro-to-turf/</a></p>
 </div>
 <div id="about-turf.js" class="slide section level1">
 <h1>About Turf.js</h1>
-<p>Not a port, new implementations</p>
-<div class="incremental">
 <p>Project started and managed by <a href="https://github.com/morganherlocker">Morgan Herlocker</a> (now at <a href="http://mapbox.com">Mapbox</a>)</p>
 <div class="figure">
 <img src="img/morganherlocker.jpg" />
 
 </div>
 </div>
-<div class="incremental">
+<div id="about-turf.js-1" class="slide section level1">
+<h1>About Turf.js</h1>
+<p><a href="http://turfjs.org">turfjs.org</a></p>
+<p><a href="https://github.com/turfjs">github.com/turfjs</a></p>
+<div class="figure">
+<img src="img/turflogo.png" />
+
+</div>
 <p>1280+ stars, 15 owners</p>
 <div class="figure">
 <img src="img/owners.png" />
 
 </div>
+</div>
+<div id="ok-but-what-is-it" class="slide section level1">
+<h1>Ok, but what is it?</h1>
+<p>JavaScript library for <strong>geospatial analysis</strong></p>
+<div class="incremental">
+<p>Runs in web browsers, or in <a href="http://nodejs.org">Node.js</a></p>
+</div>
+<div class="incremental">
+<p>Open Source, MIT-licensed</p>
+</div>
+<div class="incremental">
+<p>Collection of small modules</p>
 </div>
 </div>
 <div id="modules" class="slide section level1">
@@ -131,35 +108,19 @@ James Seppi
 <p>turf-aggregate, turf-along, turf-average, turf-bbox-polygon, turf-bearing, turf-bezier, turf-center, turf-centroid, turf-combine, turf-concave, turf-convex, turf-count, turf-destination, turf-deviation, turf-envelope, turf-erase, turf-explode, turf-extent, turf-featurecollection, turf-filter, turf-flip, turf-hex-grid, turf-inside, turf-isolines, turf-jenks, turf-kinks, turf-line-distance, turf-line-slice, turf-linestring, turf-max, turf-median, turf-midpoint, turf-min, turf-nearest, turf-planepoint, turf-point, turf-point-grid, turf-point-on-line, turf-point-on-surface, turf-polygon, turf-quantile, turf-random, turf-reclass, turf-remove, turf-sample, turf-simplify, turf-size, turf-square, turf-square-grid, turf-sum, turf-tag, turf-tin, turf-triangle-grid, turf-variance, turf-within</p>
 </div>
 </div>
-<div id="why-does-this-matter" class="slide section level1">
-<h1>Why does this matter?</h1>
-<p>New implementations, recent algorithms - pretty fast!</p>
+<div id="data-format" class="slide section level1">
+<h1>Data Format</h1>
+<p>Uses <a href="http://geojson.org"><strong>GeoJSON</strong></a> for all data in and out</p>
 <div class="incremental">
-<p>&quot;Isomorphic&quot; - browser and back-end</p>
+<p><strong>Geographic coordinates</strong> (WGS-84) only</p>
 </div>
 <div class="incremental">
-<p>Modular - take only what you need (good for browsers via <a href="http://browserify.org/">browserify</a>)</p>
-</div>
-<div class="incremental">
-<p>Speaks <a href="http://geojson.org">GeoJSON</a></p>
-</div>
-<div class="incremental">
-<p>Wraps other modules so that they speak GeoJSON, too</p>
+<p>This means you must first <em>reproject</em> and <em>transform</em> other data formats to GeoJSON to use it in Turf</p>
 </div>
 </div>
 <div id="geojson" class="slide section level1">
 <h1>GeoJSON</h1>
-<div class="incremental">
-<p>Not GeoJohnson</p>
-<div class="figure">
-<img src="img/geojohnson.png" />
-
-</div>
-</div>
-</div>
-<div id="geojson-1" class="slide section level1">
-<h1>GeoJSON</h1>
-<p>Lingua franca for geospatial data on the web</p>
+<p>Standard format for geospatial data on the web</p>
 <div class="incremental">
 <p>Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon, GeometryCollection</p>
 </div>
@@ -167,16 +128,17 @@ James Seppi
 <p>Feature, FeatureCollection (store properties with geometries)</p>
 </div>
 </div>
-<div id="geojson-2" class="slide section level1">
+<div id="geojson-1" class="slide section level1">
 <h1>GeoJSON</h1>
 <pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
   <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;Feature&quot;</span><span class="fu">,</span>
   <span class="dt">&quot;geometry&quot;</span><span class="fu">:</span> <span class="fu">{</span>
     <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;Point&quot;</span><span class="fu">,</span>
-    <span class="dt">&quot;coordinates&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fl">125.6</span><span class="ot">,</span> <span class="fl">10.1</span><span class="ot">]</span>
+    <span class="dt">&quot;coordinates&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fl">-97.74306</span><span class="ot">,</span> <span class="fl">30.26715</span><span class="ot">]</span>
   <span class="fu">},</span>
   <span class="dt">&quot;properties&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Dinagat Islands&quot;</span>
+    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Austin&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;population&quot;</span><span class="fu">:</span> <span class="dv">885400</span>
   <span class="fu">}</span>
 <span class="fu">}</span></code></pre>
 <p><a href="http://geojson.org">geojson.org</a></p>
@@ -201,11 +163,8 @@ James Seppi
 </div>
 <div id="examples" class="slide section level1">
 <h1>Examples!</h1>
-<p>Word of Warning: Web map rendering performance</p>
-<p>For larger datasets do analysis on back-end</p>
-<div class="incremental">
-<p>Nonetheless, it is fun to see in a web map</p>
-</div>
+<p>Word of Warning: Having too many points or complex features will make rendering or non-responsive</p>
+<p>For larger datasets or complex analysis, it is better to do analysis on back-end</p>
 </div>
 <div class="slide section level1">
 
@@ -240,55 +199,21 @@ Show Demo
 </div>
 <div class="slide section level1">
 
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">//tnris geojson made with rasterio</span>
-display = <span class="ot">tnris</span>.<span class="fu">type</span>;
-result = tnris;</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">//City of Austin Historical Landmarks</span>
+<span class="co">// from https://data.austintexas.gov/Geodata/Historical-Landmarks-Map/6k54-2nnj</span>
+display = <span class="ot">landmarks</span>.<span class="fu">type</span>;
+display = <span class="st">&#39;Num Points: &#39;</span> + <span class="ot">landmarks</span>.<span class="ot">features</span>.<span class="fu">length</span>;
+result = landmarks;</code></pre>
 <button class="button">
 Show Demo
 </button>
+<p>Download the Historical Landmarks GeoJSON at <a href="http://maptimeatx.github.io/intro-to-turf/data/landmarks.geojson">maptimeatx.github.io/intro-to-turf/data/landmarks.geojson</a></p>
 </div>
 <div class="slide section level1">
 
-<pre class="sourceCode javascript"><code class="sourceCode javascript">result = <span class="ot">turf</span>.<span class="fu">explode</span>(tnris);
-display = <span class="st">&#39;Num Points: &#39;</span> + <span class="ot">result</span>.<span class="ot">features</span>.<span class="fu">length</span>;</code></pre>
-<button class="button">
-Show Demo
-</button>
-</div>
-<div class="slide section level1">
-
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> merged = <span class="ot">turf</span>.<span class="fu">merge</span>(tnris);
-<span class="kw">var</span> polys = <span class="ot">merged</span>.<span class="ot">geometry</span>.<span class="ot">coordinates</span>.<span class="fu">map</span>(<span class="kw">function</span> (c) {
-  <span class="kw">return</span> <span class="ot">turf</span>.<span class="fu">simplify</span>(<span class="ot">turf</span>.<span class="fu">polygon</span>(c), <span class="fl">0.1</span>);
-});
-result = <span class="ot">turf</span>.<span class="fu">featurecollection</span>(polys);</code></pre>
-<button class="button">
-Show Demo
-</button>
-</div>
-<div class="slide section level1">
-
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">//use simplified result from previous example</span>
-result = <span class="ot">turf</span>.<span class="fu">explode</span>(result);
-display = <span class="st">&#39;Num Points: &#39;</span> + <span class="ot">result</span>.<span class="ot">features</span>.<span class="fu">length</span>;</code></pre>
-<button class="button">
-Show Demo
-</button>
-</div>
-<div class="slide section level1">
-
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">//use exploded result from previous example</span>
-result = <span class="ot">turf</span>.<span class="fu">tin</span>(result);</code></pre>
-<button class="button">
-Show Demo
-</button>
-</div>
-<div class="slide section level1">
-
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> bbox = <span class="ot">turf</span>.<span class="fu">extent</span>(tnris);
-<span class="kw">var</span> grid = <span class="ot">turf</span>.<span class="fu">squareGrid</span>(bbox, <span class="dv">50</span>, <span class="st">&#39;miles&#39;</span>);
-<span class="kw">var</span> points = <span class="ot">turf</span>.<span class="fu">explode</span>(tnris);
-<span class="kw">var</span> counted = <span class="ot">turf</span>.<span class="fu">count</span>(grid, points, <span class="st">&#39;pointCount&#39;</span>);
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> bbox = <span class="ot">turf</span>.<span class="fu">extent</span>(landmarks);
+<span class="kw">var</span> grid = <span class="ot">turf</span>.<span class="fu">squareGrid</span>(bbox, <span class="fl">0.5</span>, <span class="st">&#39;miles&#39;</span>);
+<span class="kw">var</span> counted = <span class="ot">turf</span>.<span class="fu">count</span>(grid, landmarks, <span class="st">&#39;pointCount&#39;</span>);
 result = counted;</code></pre>
 <button class="button">
 Show Demo
@@ -296,21 +221,9 @@ Show Demo
 </div>
 <div class="slide section level1">
 
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> bbox = <span class="ot">turf</span>.<span class="fu">extent</span>(tnris);
-<span class="kw">var</span> grid = <span class="ot">turf</span>.<span class="fu">triangleGrid</span>(bbox, <span class="dv">50</span>, <span class="st">&#39;miles&#39;</span>);
-<span class="kw">var</span> points = <span class="ot">turf</span>.<span class="fu">explode</span>(tnris);
-<span class="kw">var</span> counted = <span class="ot">turf</span>.<span class="fu">count</span>(grid, points, <span class="st">&#39;pointCount&#39;</span>);
-result = counted;</code></pre>
-<button class="button">
-Show Demo
-</button>
-</div>
-<div class="slide section level1">
-
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> bbox = <span class="ot">turf</span>.<span class="fu">extent</span>(tnris);
-<span class="kw">var</span> grid = <span class="ot">turf</span>.<span class="fu">hexGrid</span>(bbox, <span class="dv">50</span>, <span class="st">&#39;miles&#39;</span>);
-<span class="kw">var</span> points = <span class="ot">turf</span>.<span class="fu">explode</span>(tnris);
-<span class="kw">var</span> counted = <span class="ot">turf</span>.<span class="fu">count</span>(grid, points, <span class="st">&#39;pointCount&#39;</span>);
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> bbox = <span class="ot">turf</span>.<span class="fu">extent</span>(landmarks);
+<span class="kw">var</span> grid = <span class="ot">turf</span>.<span class="fu">hexGrid</span>(bbox, <span class="fl">0.5</span>, <span class="st">&#39;miles&#39;</span>);
+<span class="kw">var</span> counted = <span class="ot">turf</span>.<span class="fu">count</span>(grid, landmarks, <span class="st">&#39;pointCount&#39;</span>);
 result = counted;</code></pre>
 <button class="button">
 Show Demo
@@ -318,13 +231,10 @@ Show Demo
 </div>
 <div id="documentation" class="slide section level1">
 <h1>Documentation!</h1>
-<p>Documentation has been at the forefront of development by the core team</p>
-<div class="incremental">
-<p>(especially: <a href="https://github.com/morganherlocker">morganherlocker</a>, <a href="https://github.com/tmcw">tmcw</a>, <a href="https://github.com/lyzidiamond">lyzidiamond</a>, <a href="https://github.com/tchannel">tchannel</a>)</p>
+<p>Documentation is a top priority for the Turf project</p>
 <div class="figure">
 <img src="img/turfdocs.png" />
 
-</div>
 </div>
 </div>
 <div class="slide section level1">
@@ -342,20 +252,6 @@ Show Demo
 <div class="figure">
 <img src="img/hex_temp_jvrousseau.png" alt="Average Temperature by Jordan Rousseau" />
 <p class="caption">Average Temperature by <a href="https://twitter.com/jvrousseau">Jordan Rousseau</a></p>
-</div>
-</div>
-<div class="slide section level1">
-
-<div class="figure">
-<img src="img/turfjsparty.png" alt="turfjs.party by tchannel" />
-<p class="caption"><a href="http://turfjs.party/">turfjs.party</a> by <a href="https://github.com/frankrowe">tchannel</a></p>
-</div>
-</div>
-<div class="slide section level1">
-
-<div class="figure">
-<img src="img/ugis.png" alt="ugis by frankrowe" />
-<p class="caption"><a href="http://frankrowe.org/ugis/">ugis</a> by <a href="https://github.com/frankrowe">frankrowe</a></p>
 </div>
 </div>
 <div class="slide section level1">
@@ -381,15 +277,6 @@ Show Demo
 </div>
 <div class="incremental">
 <p>Check out the issues: <a href="https://github.com/turfjs/turf/issues">github.com/turfjs/turf/issues</a></p>
-</div>
-</div>
-<div id="like-learning" class="slide section level1">
-<h1>Like Learning?</h1>
-<p>Austin Open Source GIS User Group</p>
-<p><a href="http://www.meetup.com/atx-osg">meetup.com/atx-osg</a></p>
-<div class="figure">
-<img src="img/maptimeatx.png" alt="meetup.com/MaptimeATX" />
-<p class="caption"><a href="http://www.meetup.com/MaptimeATX">meetup.com/MaptimeATX</a></p>
 </div>
 </div>
 <script src="scripts/main.js"></script>

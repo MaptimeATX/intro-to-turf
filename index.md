@@ -1,37 +1,24 @@
 % Intro to Turf.js
-% James Seppi
-% TNRIS GeoRodeo - May 22, 2015
+% James Seppi | @hydrologee
+% MaptimeATX - June 10, 2015
 
 -------------------------------------------------
 
 # Intro to Turf.js
 
-Presentation by James Seppi
+Presentation at [MaptimeATX](http://www.meetup.com/MaptimeATX/events/222643093/)
 
-Software Developer at [TNRIS](http://tnris.org), part of [TWDB](http://www.twdb.texas.gov)
+Viewable at [maptimeatx.github.io/intro-to-turf](http://maptimeatx.github.io/intro-to-turf)
 
-Twitter: [hydrologee](http://twitter.com/hydrologee)
+Source code at [github.com/MaptimeATX/intro-to-turf/](https://github.com/MaptimeATX/intro-to-turf/)
 
-Viewable at [jseppi.github.io/intro-to-turf/](http://jseppi.github.io/intro-to-turf/)
+# About Turf.js
 
-Source code at [github.com/jseppi/intro-to-turf/](https://github.com/jseppi/intro-to-turf/)
+Project started and managed by [Morgan Herlocker](https://github.com/morganherlocker) (now at [Mapbox](http://mapbox.com))
 
+![](img/morganherlocker.jpg)
 
-# What is Turf.js?
-
-JavaScript library for geospatial analysis
-
-. . .
-
-Runs in the browser, or in [Node.js](http://nodejs.org)
-
-. . .
-
-Open Source, MIT-licensed
-
-Collection of small modules
-
-. . .
+# About Turf.js
 
 [turfjs.org](http://turfjs.org)
 
@@ -39,45 +26,25 @@ Collection of small modules
 
 ![](img/turflogo.png)
 
-# Some History
-
-(from Tom MacWright - [macwright.org/presentations/turf-geodc](http://www.macwright.org/presentations/turf-geodc))
-
-. . .
-
-2000: [Java Topology Suite (JTS)](http://tsusiatsoftware.net/jts/main.html)
-
-. . .
-
-2003: [GEOS](http://trac.osgeo.org/geos/), JTS port to C++
-
-. . .
-
-2008: [Shapely](http://toblerity.org/shapely/manual.html), interface of GEOS to Python
-
-. . .
-
-2011: [JavaScript Topology Suite (JSTS)](https://github.com/bjornharrtell/jsts), JTS port to JS
-
-. . .
-
-2014: [Turf](http://turfjs.org)
-
-# About Turf.js
-
-Not a port, new implementations
-
-. . .
-
-Project started and managed by [Morgan Herlocker](https://github.com/morganherlocker) (now at [Mapbox](http://mapbox.com))
-
-![](img/morganherlocker.jpg)
-
-. . .
-
 1280+ stars, 15 owners
 
 ![](img/owners.png)
+
+# Ok, but what is it?
+
+JavaScript library for **geospatial analysis**
+
+. . .
+
+Runs in web browsers, or in [Node.js](http://nodejs.org)
+
+. . .
+
+Open Source, MIT-licensed
+
+. . .
+
+Collection of small modules
 
 # Modules
 
@@ -103,38 +70,21 @@ turf-intersect, turf-union, turf-merge
 
 turf-aggregate, turf-along, turf-average, turf-bbox-polygon, turf-bearing, turf-bezier, turf-center, turf-centroid, turf-combine, turf-concave, turf-convex, turf-count, turf-destination, turf-deviation, turf-envelope, turf-erase, turf-explode, turf-extent, turf-featurecollection, turf-filter, turf-flip, turf-hex-grid, turf-inside, turf-isolines, turf-jenks, turf-kinks, turf-line-distance, turf-line-slice, turf-linestring, turf-max, turf-median, turf-midpoint, turf-min, turf-nearest, turf-planepoint, turf-point, turf-point-grid, turf-point-on-line, turf-point-on-surface, turf-polygon, turf-quantile, turf-random, turf-reclass, turf-remove, turf-sample, turf-simplify, turf-size, turf-square, turf-square-grid, turf-sum, turf-tag, turf-tin, turf-triangle-grid, turf-variance, turf-within
 
+# Data Format
 
-# Why does this matter?
-
-New implementations, recent algorithms - pretty fast!
-
-. . .
-
-"Isomorphic" - browser and back-end
+Uses [**GeoJSON**](http://geojson.org) for all data in and out
 
 . . .
 
-Modular - take only what you need (good for browsers via [browserify](http://browserify.org/))
+**Geographic coordinates** (WGS-84) only
 
 . . .
 
-Speaks [GeoJSON](http://geojson.org)
-
-. . .
-
-Wraps other modules so that they speak GeoJSON, too
+This means you must first *reproject* and *transform* other data formats to GeoJSON to use it in Turf
 
 # GeoJSON
 
-. . .
-
-Not GeoJohnson
-
-![](img/geojohnson.png)
-
-# GeoJSON
-
-Lingua franca for geospatial data on the web
+Standard format for geospatial data on the web
 
 . . .
 
@@ -152,10 +102,11 @@ Feature, FeatureCollection
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [125.6, 10.1]
+    "coordinates": [-97.74306, 30.26715]
   },
   "properties": {
-    "name": "Dinagat Islands"
+    "name": "Austin",
+    "population": 885400
   }
 }
 ```
@@ -191,13 +142,9 @@ On your web page
 
 # Examples!
 
-Word of Warning: Web map rendering performance
+Word of Warning: Having too many points or complex features will make rendering or non-responsive
 
-For larger datasets do analysis on back-end
-
-. . .
-
-Nonetheless, it is fun to see in a web map
+For larger datasets or complex analysis, it is better to do analysis on back-end
 
 -----------------------------------------------------------
 
@@ -236,62 +183,23 @@ result = turf.intersect(atxBuffer.features[0], rrBuffer.features[0]);
 -----------------------------------------------------------
 
 ```javascript
-//tnris geojson made with rasterio
-display = tnris.type;
-result = tnris;
+//City of Austin Historical Landmarks
+// from https://data.austintexas.gov/Geodata/Historical-Landmarks-Map/6k54-2nnj
+display = landmarks.type;
+display = 'Num Points: ' + landmarks.features.length;
+result = landmarks;
 ```
 
 <button class="button">Show Demo</button>
 
------------------------------------------------------------
-
-```javascript
-result = turf.explode(tnris);
-display = 'Num Points: ' + result.features.length;
-```
-
-<button class="button">Show Demo</button>
-
------------------------------------------------------------
-
-
-```javascript
-var merged = turf.merge(tnris);
-var polys = merged.geometry.coordinates.map(function (c) {
-  return turf.simplify(turf.polygon(c), 0.1);
-});
-result = turf.featurecollection(polys);
-```
-
-<button class="button">Show Demo</button>
+Download the Historical Landmarks GeoJSON at [maptimeatx.github.io/intro-to-turf/data/landmarks.geojson](http://maptimeatx.github.io/intro-to-turf/data/landmarks.geojson)
 
 -----------------------------------------------------------
 
 ```javascript
-//use simplified result from previous example
-result = turf.explode(result);
-display = 'Num Points: ' + result.features.length;
-```
-
-<button class="button">Show Demo</button>
-
------------------------------------------------------------
-
-```javascript
-//use exploded result from previous example
-result = turf.tin(result);
-```
-
-<button class="button">Show Demo</button>
-
------------------------------------------------------------
-
-
-```javascript
-var bbox = turf.extent(tnris);
-var grid = turf.squareGrid(bbox, 50, 'miles');
-var points = turf.explode(tnris);
-var counted = turf.count(grid, points, 'pointCount');
+var bbox = turf.extent(landmarks);
+var grid = turf.squareGrid(bbox, 0.5, 'miles');
+var counted = turf.count(grid, landmarks, 'pointCount');
 result = counted;
 ```
 
@@ -300,22 +208,9 @@ result = counted;
 -----------------------------------------------------------
 
 ```javascript
-var bbox = turf.extent(tnris);
-var grid = turf.triangleGrid(bbox, 50, 'miles');
-var points = turf.explode(tnris);
-var counted = turf.count(grid, points, 'pointCount');
-result = counted;
-```
-
-<button class="button">Show Demo</button>
-
------------------------------------------------------------
-
-```javascript
-var bbox = turf.extent(tnris);
-var grid = turf.hexGrid(bbox, 50, 'miles');
-var points = turf.explode(tnris);
-var counted = turf.count(grid, points, 'pointCount');
+var bbox = turf.extent(landmarks);
+var grid = turf.hexGrid(bbox, 0.5, 'miles');
+var counted = turf.count(grid, landmarks, 'pointCount');
 result = counted;
 ```
 
@@ -325,11 +220,7 @@ result = counted;
 
 # Documentation!
 
-Documentation has been at the forefront of development by the core team 
-
-. . .
-
-(especially: [morganherlocker](https://github.com/morganherlocker), [tmcw](https://github.com/tmcw), [lyzidiamond](https://github.com/lyzidiamond), [tchannel](https://github.com/tchannel))
+Documentation is a top priority for the Turf project
 
 ![](img/turfdocs.png)
 
@@ -346,14 +237,6 @@ Built directly from the source code
 # In the Wild
 
 ![Average Temperature by [Jordan Rousseau](https://twitter.com/jvrousseau)](img/hex_temp_jvrousseau.png)
-
------------------------------------------------------------
-
-![[turfjs.party](http://turfjs.party/) by [tchannel](https://github.com/frankrowe)](img/turfjsparty.png)
-
------------------------------------------------------------
-
-![[ugis](http://frankrowe.org/ugis/) by [frankrowe](https://github.com/frankrowe)](img/ugis.png)
 
 -----------------------------------------------------------
 
@@ -377,10 +260,3 @@ Still more work to be done: **docs** to improve, **code** to write, **bugs** to 
 
 Check out the issues: [github.com/turfjs/turf/issues](https://github.com/turfjs/turf/issues) 
 
-# Like Learning?
-
-Austin Open Source GIS User Group
-
-[meetup.com/atx-osg](http://www.meetup.com/atx-osg)
-
-![[meetup.com/MaptimeATX](http://www.meetup.com/MaptimeATX)](img/maptimeatx.png)

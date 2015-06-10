@@ -4,9 +4,9 @@
 
 w3c_slidy.mouse_click_enabled = false;
 
-var tnris, result, display;
-$.getJSON('data/tnris.geojson', function (data) {
-  tnris = data;
+var landmarks, result, display;
+$.getJSON('data/historic_landmarks.geojson', function (data) {
+  landmarks = data;
 });
 
 var setupMap = function(el) {
@@ -48,16 +48,13 @@ var runCode = function (event) {
   }
 
   var geojsonLayer = L.geoJson(result, {
-    pointToLayer: function (featureData, latlng) {
-      return L.circle(latlng, 1000);
-    },
     style: function (feature) {
       var color = '#2ECC71';
       var opacity = 0.8;
       var fillOpacity = 0.6;
       if (feature.properties.hasOwnProperty('pointCount')) {
-        opacity = feature.properties.pointCount / maxPointCount;
-        fillOpacity = opacity;
+        opacity = 0;
+        fillOpacity = feature.properties.pointCount / maxPointCount;
       }
       return {
         'color': color,
