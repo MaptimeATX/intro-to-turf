@@ -226,6 +226,8 @@ Documentation is a top priority for the Turf project
 
 -----------------------------------------------------------
 
+# Documentation!
+
 Built directly from the source code
 
 . . .
@@ -260,3 +262,14 @@ Still more work to be done: **docs** to improve, **code** to write, **bugs** to 
 
 Check out the issues: [github.com/turfjs/turf/issues](https://github.com/turfjs/turf/issues) 
 
+# Walkthrough Exercise
+
+**Austin Historic Landmarks**
+
+* GeoJSON: [maptimeatx.github.io/intro-to-turf/data/historic_landmarks.geojson](http://maptimeatx.github.io/intro-to-turf/data/historic_landmarks.geojson)
+* Modified from: [data.austintexas.gov/dataset/Historical-Landmarks/nrfx-jets](https://data.austintexas.gov/dataset/Historical-Landmarks/nrfx-jets)
+
+**Austin City Council Districts**
+
+* GeoJSON: [maptimeatx.github.io/intro-to-turf/data/austin_districts.geojson](http://maptimeatx.github.io/intro-to-turf/data/austin_districts.geojson)
+* Modified from: [data.austintexas.gov/Government/Single-Member-Council-Districts/69pm-tzkv](https://data.austintexas.gov/Government/Single-Member-Council-Districts/69pm-tzkv)
