@@ -262,14 +262,30 @@ Still more work to be done: **docs** to improve, **code** to write, **bugs** to 
 
 Check out the issues: [github.com/turfjs/turf/issues](https://github.com/turfjs/turf/issues) 
 
-# Walkthrough Exercise
+# Hands-On!
+
+[https://goo.gl/jVHCR2](https://goo.gl/jVHCR2)
+
+. . .
+
+Pair up with some (new) friends. Try to have a JavaScript person in each group.
+
+. . .
+
+Work together. Ask questions. You can do it!
+
+. . .
+
+![](http://cdn.meme.am/instances/500x/56977270.jpg)
+
+# Notes about Hands-On Data
 
 **Austin Historic Landmarks**
 
-* GeoJSON: [maptimeatx.github.io/intro-to-turf/data/historic_landmarks.geojson](http://maptimeatx.github.io/intro-to-turf/data/historic_landmarks.geojson)
+* GeoJSON: [maptimeatx.github.io/intro-to-turf/data/historic_landmarks.geojson](https://maptimeatx.github.io/intro-to-turf/data/historic_landmarks.geojson)
 * Modified from: [data.austintexas.gov/dataset/Historical-Landmarks/nrfx-jets](https://data.austintexas.gov/dataset/Historical-Landmarks/nrfx-jets)
 
 **Austin City Council Districts**
 
-* GeoJSON: [maptimeatx.github.io/intro-to-turf/data/austin_districts.geojson](http://maptimeatx.github.io/intro-to-turf/data/austin_districts.geojson)
+* GeoJSON: [maptimeatx.github.io/intro-to-turf/data/austin_districts.geojson](https://maptimeatx.github.io/intro-to-turf/data/austin_districts.geojson)
 * Modified from: [data.austintexas.gov/Government/Single-Member-Council-Districts/69pm-tzkv](https://data.austintexas.gov/Government/Single-Member-Council-Districts/69pm-tzkv)

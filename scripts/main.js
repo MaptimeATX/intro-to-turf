@@ -9,9 +9,9 @@ $.getJSON('data/historic_landmarks.geojson', function (data) {
   landmarks = data;
 });
 
-$.getJSON('data/austin_districts.geojson', function (data) {
-  districts = data;
-});
+// $.getJSON('data/austin_districts.geojson', function (data) {
+//   districts = data;
+// });
 
 var setupMap = function(el) {
   var map = L.map(el, {
