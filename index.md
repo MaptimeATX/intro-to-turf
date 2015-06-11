@@ -302,6 +302,6 @@ Don't Peak!
 
 * Center: [https://jsfiddle.net/jseppi/5pgzdtpz/1/](https://jsfiddle.net/jseppi/5pgzdtpz/1/)
 * Merge: [https://jsfiddle.net/6eo46j64/3/](https://jsfiddle.net/6eo46j64/3/)
-* Number in each: [https://jsfiddle.net/jseppi/bxw7o6hb/4/](https://jsfiddle.net/jseppi/bxw7o6hb/4/)
-* Centroids: [https://jsfiddle.net/jseppi/f9vov2s3/1/](https://jsfiddle.net/jseppi/f9vov2s3/1/)
+* Number in each: [http://jsfiddle.net/jseppi/bxw7o6hb/5/](http://jsfiddle.net/jseppi/bxw7o6hb/5/)
 * Landmarks in District 9: [https://jsfiddle.net/at6mukbc/2/](https://jsfiddle.net/at6mukbc/2/)
+* Centroids: [https://jsfiddle.net/jseppi/f9vov2s3/3/](https://jsfiddle.net/jseppi/f9vov2s3/3/)
